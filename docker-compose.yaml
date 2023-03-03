@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  api:
+    build: ./api
+    container_name: c_api_compose
+    ports:
+      - '8000:8000'
+    networks:
+      - zacknet_compose 
+  connectmongo:
+    build: ./connectmongo
+    container_name: c_mongo_compose
+    ports:
+      - '27017:27017'
+    networks:
+      - zacknet_compose    
+networks:
+  zacknet_compose: {}     
